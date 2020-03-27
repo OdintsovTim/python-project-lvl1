@@ -7,4 +7,8 @@ def welcome_user():
     print()
     name = prompt.string('May I have your name? ')
     return name
+
+
+def greet_user_by_name(name):
+    '''Greets user by his name'''
     print(f'Hello, {name}!')
