@@ -4,10 +4,9 @@ from brain_games import cli
 
 
 def main():
-    '''main projects func'''
-    print('Welcome to the Brain Games!')
-    print()
-    cli.welcome_user()
+    '''scripts main func'''
+    name = cli.welcome_user()
+    cli.greet_user_by_name(name)
 
 
 if __name__ == '__main__':
