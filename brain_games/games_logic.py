@@ -2,7 +2,7 @@ import random
 
 
 def make_even_game(name):
-    '''logic of even game'''
+    '''Logic of even game.'''
     correct_answers_counter = 0
     min_number = - 1000
     max_number = 1000

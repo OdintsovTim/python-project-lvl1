@@ -4,7 +4,7 @@ from brain_games import cli
 
 
 def main():
-    '''scripts main func'''
+    '''Scripts main func'''
     name = cli.welcome_user()
     cli.greet_user_by_name(name)
 
