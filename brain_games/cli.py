@@ -1,23 +1,17 @@
 import prompt
 
 
-def welcome_user():
+def welcome_user(even=False, calc=False):
     '''Greets and asks for a name of username and save it.'''
     print('Welcome to the Brain Games!')
+
+    if even:
+        print('Answer "yes" if number even otherwise answer "no".')
+    elif calc:
+        print('What is the result of the expression?')
     print()
+
     name = prompt.string('May I have your name? ')
-    return name
-
-
-def greet_user_by_name(name):
-    '''Greets user by his name'''
     print(f'Hello, {name}!')
 
-
-def welcome_user_to_even_game():
-    '''Greets and asks for a name of username and save it.'''
-    print('Welcome to the Brain Games!')
-    print('Answer "yes" if number even otherwise answer "no".')
-    print()
-    name = prompt.string('May I have your name? ')
     return name
