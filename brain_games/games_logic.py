@@ -33,5 +33,17 @@ def make_game(name, even=False, calc=False):
         print(f'Congratulations, {name}!')
 
 
+def make_results_even_game():
+    '''Question and correct answer for even game.'''
+    question = random.randint(MIN_NUMBER, MAX_NUMBER)
+
+    if question % 2 == 0:
+        correct_answer = 'yes'
+    else:
+        correct_answer = 'no'
+
+    return question, correct_answer
+
+
 
     print(f'Congratulations, {name}!')
