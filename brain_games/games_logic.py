@@ -5,19 +5,17 @@ MAX_NUMBER = 100
 MIN_NUMBER = -100
 
 
+def make_game(name, even=False, calc=False):
+    '''Logic of games'''
     correct_answers_counter = 0
-    min_number = - 1000
-    max_number = 1000
 
     while correct_answers_counter < 3:
-        random_number = random.randint(min_number, max_number)
+        if even:
+            question, correct_answer = make_results_even_game()
+        elif calc:
+            question, correct_answer = make_results_calc_game()
 
-        if random_number % 2 == 0:
-            correct_answer = 'yes'
-        else:
-            correct_answer = 'no'
-
-        print(f'Question: {random_number}')
+        print(f'Question: {question}')
         users_answer = input('Your answer: ').lower()
 
         if users_answer == correct_answer:
@@ -30,5 +28,10 @@ MIN_NUMBER = -100
                 )
             )
             print(f'Let\'s try again, {name}')
+            break
+    else:
+        print(f'Congratulations, {name}!')
+
+
 
     print(f'Congratulations, {name}!')
