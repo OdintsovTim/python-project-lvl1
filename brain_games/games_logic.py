@@ -45,5 +45,21 @@ def make_results_even_game():
     return question, correct_answer
 
 
+def make_results_calc_game():
+    '''Question and correct answer for calc game.'''
+    operations = ['addition', 'subtraction', 'multiplication']
+    first_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    operation = random.choice(operations)
 
-    print(f'Congratulations, {name}!')
+    if operation == 'addition':
+        correct_answer = str(first_random_number + second_random_number)
+        question = f'{first_random_number} + {second_random_number}'
+    elif operation == 'subtraction':
+        correct_answer = str(first_random_number - second_random_number)
+        question = f'{first_random_number} - {second_random_number}'
+    else:
+        correct_answer = str(first_random_number * second_random_number)
+        question = f'{first_random_number} * {second_random_number}'
+
+    return question, correct_answer
