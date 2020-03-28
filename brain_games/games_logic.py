@@ -1,3 +1,4 @@
+import math
 import random
 
 
@@ -5,7 +6,7 @@ MAX_NUMBER = 100
 MIN_NUMBER = -100
 
 
-def make_game(name, even=False, calc=False):
+def make_game(name, even=False, calc=False, gcd=False):
     '''Logic of games'''
     correct_answers_counter = 0
 
@@ -14,6 +15,8 @@ def make_game(name, even=False, calc=False):
             question, correct_answer = make_results_even_game()
         elif calc:
             question, correct_answer = make_results_calc_game()
+        elif gcd:
+            question, correct_answer = make_results_gcd_game()
 
         print(f'Question: {question}')
         users_answer = input('Your answer: ').lower()
@@ -61,5 +64,16 @@ def make_results_calc_game():
     else:
         correct_answer = str(first_random_number * second_random_number)
         question = f'{first_random_number} * {second_random_number}'
+
+    return question, correct_answer
+
+
+def make_results_gcd_game():
+    '''Question and correct answer for gcd game.'''
+    first_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+
+    correct_answer = str(math.gcd(first_random_number, second_random_number))
+    question = f'{first_random_number} {second_random_number}'
 
     return question, correct_answer
