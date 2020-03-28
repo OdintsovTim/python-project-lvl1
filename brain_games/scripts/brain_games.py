@@ -6,7 +6,7 @@ from brain_games import cli
 def main():
     '''Scripts main func'''
     name = cli.welcome_user()
-    cli.greet_user_by_name(name)
+    print(f'Bye, {name}')
 
 
 if __name__ == '__main__':
