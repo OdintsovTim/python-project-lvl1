@@ -5,10 +5,8 @@ from brain_games import cli, games_logic
 
 def main():
     '''Scripts main func.'''
-    name = cli.welcome_user_to_even_game()
-    cli.greet_user_by_name(name)
-    print()
-    games_logic.make_even_game(name)
+    name = cli.welcome_user(even=True)
+    games_logic.make_game(name, even=True)
 
 
 if __name__ == '__main__':
