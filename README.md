@@ -3,3 +3,6 @@
 
 # Parity check game
 [![asciicast](https://asciinema.org/a/rzDoloBU7ILpyWAWXTI9RNodY.svg)](https://asciinema.org/a/rzDoloBU7ILpyWAWXTI9RNodY)
+
+# Calc game
+[![asciicast](https://asciinema.org/a/qYrEXclK4OwItRDILe3C89Ll9.svg)](https://asciinema.org/a/qYrEXclK4OwItRDILe3C89Ll9)
