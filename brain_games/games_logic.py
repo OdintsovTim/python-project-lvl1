@@ -6,7 +6,7 @@ MAX_NUMBER = 100
 MIN_NUMBER = -100
 
 
-def make_game(name, even=False, calc=False, gcd=False):
+def make_game(name, even=False, calc=False, gcd=False, progression=False):
     '''Logic of games'''
     correct_answers_counter = 0
 
@@ -17,6 +17,8 @@ def make_game(name, even=False, calc=False, gcd=False):
             question, correct_answer = make_results_calc_game()
         elif gcd:
             question, correct_answer = make_results_gcd_game()
+        elif progression:
+            question, correct_answer = make_results_progression_game()
 
         print(f'Question: {question}')
         users_answer = input('Your answer: ').lower()
@@ -75,5 +77,19 @@ def make_results_gcd_game():
 
     correct_answer = str(math.gcd(first_random_number, second_random_number))
     question = f'{first_random_number} {second_random_number}'
+
+    return question, correct_answer
+
+
+def make_results_progression_game():
+    '''Question and correct answer for progression game.'''
+    step = random.randint(1, 10)
+    first_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    progression = list(range(first_number, first_number + step * 10, step))
+
+    correct_answer_index = random.randint(0, 9)
+    correct_answer = str(progression[correct_answer_index])
+    progression[correct_answer_index] = '..'
+    question = ' '.join([str(num) for num in progression])
 
     return question, correct_answer
