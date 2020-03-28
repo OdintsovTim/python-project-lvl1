@@ -1,8 +1,10 @@
 import random
 
 
-def make_even_game(name):
-    '''Logic of even game.'''
+MAX_NUMBER = 100
+MIN_NUMBER = -100
+
+
     correct_answers_counter = 0
     min_number = - 1000
     max_number = 1000
