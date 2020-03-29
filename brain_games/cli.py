@@ -1,7 +1,7 @@
 import prompt
 
 
-def welcome_user(even=False, calc=False, gcd=False, progression=False):
+def welcome_user(even=False, calc=False, gcd=False, progression=False, prime=False):
     '''Greets and asks for a name of username and save it.'''
     print('Welcome to the Brain Games!')
 
@@ -13,6 +13,8 @@ def welcome_user(even=False, calc=False, gcd=False, progression=False):
         print('Find the greatest common divisor of given numbers.')
     elif progression:
         print('What number is missing in the progression?')
+    elif prime:
+        print('Answer "yes" if given number is prime. Otherwise answer "no".')
     print()
 
     name = prompt.string('May I have your name? ')
