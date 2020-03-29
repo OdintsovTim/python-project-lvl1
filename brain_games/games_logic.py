@@ -6,7 +6,7 @@ MAX_NUMBER = 100
 MIN_NUMBER = -100
 
 
-def make_game(name, even=False, calc=False, gcd=False, progression=False):
+def make_game(name, even=False, calc=False, gcd=False, progression=False, prime=False):
     '''Logic of games'''
     correct_answers_counter = 0
 
@@ -19,6 +19,8 @@ def make_game(name, even=False, calc=False, gcd=False, progression=False):
             question, correct_answer = make_results_gcd_game()
         elif progression:
             question, correct_answer = make_results_progression_game()
+        elif prime:
+            question, correct_answer = make_results_prime_game()
 
         print(f'Question: {question}')
         users_answer = input('Your answer: ').lower()
@@ -91,5 +93,19 @@ def make_results_progression_game():
     correct_answer = str(progression[correct_answer_index])
     progression[correct_answer_index] = '..'
     question = ' '.join([str(num) for num in progression])
+
+    return question, correct_answer
+
+
+def make_results_prime_game():
+    '''Question and correct answer for even game.'''
+    question = random.randint(2, MAX_NUMBER)
+
+    for num in range(2, math.ceil(math.sqrt(question))):
+        if question % num == 0:
+            correct_answer = 'no'
+            break
+    else:
+        correct_answer = 'yes'
 
     return question, correct_answer
