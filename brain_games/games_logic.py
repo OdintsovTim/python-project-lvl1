@@ -11,16 +11,7 @@ def make_game(name, game):
     correct_answers_counter = 0
 
     while correct_answers_counter < 3:
-        if game == 'even':
-            question, correct_answer = make_results_even_game()
-        elif game == 'calc':
-            question, correct_answer = make_results_calc_game()
-        elif game == 'gcd':
-            question, correct_answer = make_results_gcd_game()
-        elif game == 'progression':
-            question, correct_answer = make_results_progression_game()
-        elif game == 'prime':
-            question, correct_answer = make_results_prime_game()
+        question, correct_answer = select_question_answer_by_game(game)
 
         print(f'Question: {question}')
         users_answer = input('Your answer: ').lower()
@@ -38,6 +29,21 @@ def make_game(name, game):
             break
     else:
         print(f'Congratulations, {name}!')
+
+
+def select_question_answer_by_game(game):
+    if game == 'even':
+        question, correct_answer = make_results_even_game()
+    elif game == 'calc':
+        question, correct_answer = make_results_calc_game()
+    elif game == 'gcd':
+        question, correct_answer = make_results_gcd_game()
+    elif game == 'progression':
+        question, correct_answer = make_results_progression_game()
+    elif game == 'prime':
+        question, correct_answer = make_results_prime_game()
+
+    return question, correct_answer
 
 
 def make_results_even_game():
