@@ -1,19 +1,19 @@
 import prompt
 
 
-def welcome_user(even=False, calc=False, gcd=False, progression=False, prime=False):
+def welcome_user(game):
     '''Greets and asks for a name of username and save it.'''
     print('Welcome to the Brain Games!')
 
-    if even:
+    if game == 'even':
         print('Answer "yes" if number even otherwise answer "no".')
-    elif calc:
+    elif game == 'calc':
         print('What is the result of the expression?')
-    elif gcd:
+    elif game == 'gcd':
         print('Find the greatest common divisor of given numbers.')
-    elif progression:
+    elif game == 'progression':
         print('What number is missing in the progression?')
-    elif prime:
+    elif game == 'prime':
         print('Answer "yes" if given number is prime. Otherwise answer "no".')
     print()
 
