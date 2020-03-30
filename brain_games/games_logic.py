@@ -6,20 +6,20 @@ MAX_NUMBER = 100
 MIN_NUMBER = -100
 
 
-def make_game(name, even=False, calc=False, gcd=False, progression=False, prime=False):
-    '''Logic of games'''
+def make_game(name, game):
+    '''Making a template for a games'''
     correct_answers_counter = 0
 
     while correct_answers_counter < 3:
-        if even:
+        if game == 'even':
             question, correct_answer = make_results_even_game()
-        elif calc:
+        elif game == 'calc':
             question, correct_answer = make_results_calc_game()
-        elif gcd:
+        elif game == 'gcd':
             question, correct_answer = make_results_gcd_game()
-        elif progression:
+        elif game == 'progression':
             question, correct_answer = make_results_progression_game()
-        elif prime:
+        elif game == 'prime':
             question, correct_answer = make_results_prime_game()
 
         print(f'Question: {question}')
@@ -41,7 +41,7 @@ def make_game(name, even=False, calc=False, gcd=False, progression=False, prime=
 
 
 def make_results_even_game():
-    '''Question and correct answer for even game.'''
+    '''Returns question and correct answer for even game.'''
     question = random.randint(MIN_NUMBER, MAX_NUMBER)
 
     if question % 2 == 0:
@@ -53,7 +53,7 @@ def make_results_even_game():
 
 
 def make_results_calc_game():
-    '''Question and correct answer for calc game.'''
+    '''Returns question and correct answer for calc game.'''
     operations = ['addition', 'subtraction', 'multiplication']
     first_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
@@ -73,7 +73,7 @@ def make_results_calc_game():
 
 
 def make_results_gcd_game():
-    '''Question and correct answer for gcd game.'''
+    '''Returns question and correct answer for gcd game.'''
     first_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
 
@@ -84,7 +84,7 @@ def make_results_gcd_game():
 
 
 def make_results_progression_game():
-    '''Question and correct answer for progression game.'''
+    '''Returns question and correct answer for progression game.'''
     step = random.randint(1, 10)
     first_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     progression = list(range(first_number, first_number + step * 10, step))
@@ -98,7 +98,7 @@ def make_results_progression_game():
 
 
 def make_results_prime_game():
-    '''Question and correct answer for even game.'''
+    '''Returns question and correct answer for even game.'''
     question = random.randint(2, MAX_NUMBER)
 
     for num in range(2, math.ceil(math.sqrt(question))):
