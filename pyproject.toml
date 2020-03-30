@@ -1,10 +1,16 @@
 [tool.poetry]
 name = "OdintsovTim_brain_games"
 version = "0.7.0"
-description = ""
+description = "It's a packege with different games"
 authors = ["Odintsov Timur <timodin@yandex.ru>"]
 packages = [
   { include = "brain_games" },
+]
+repository = "https://github.com/OdintsovTim/python-project-lvl1"
+classifiers = [
+  Topic :: Games/Entertainment :: Puzzle Games,
+  Programming Language :: Python :: 3.7,
+  Topic :: Software Development :: Libraries :: Python Modules
 ]
 
 [tool.poetry.dependencies]
