@@ -104,7 +104,7 @@ def make_results_progression_game():
 
 
 def make_results_prime_game():
-    '''Returns question and correct answer for even game.'''
+    '''Returns question and correct answer for prime game.'''
     question = random.randint(2, MAX_NUMBER)
 
     for num in range(2, math.ceil(math.sqrt(question))):
