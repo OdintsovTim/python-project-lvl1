@@ -80,10 +80,15 @@ def make_results_calc_game():
 
 def make_results_gcd_game():
     '''Returns question and correct answer for gcd game.'''
-    first_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
-    second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
+    first_random_number = random.randint(1, MAX_NUMBER)
+    second_random_number = random.randint(1, MAX_NUMBER)
 
-    correct_answer = str(math.gcd(first_random_number, second_random_number))
+    maximum = max(first_random_number, second_random_number)
+    minimum = min(first_random_number, second_random_number)
+    while maximum % minimum != 0:
+        maximum, minimum = minimum, maximum % minimum
+
+    correct_answer = str(minimum)
     question = f'{first_random_number} {second_random_number}'
 
     return question, correct_answer
