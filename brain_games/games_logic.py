@@ -1,9 +1,15 @@
 import math
+import operator
 import random
 
 
 MAX_NUMBER = 100
 MIN_NUMBER = -100
+OPERATIONS = {
+    '+': operator.add,
+    '-': operator.sub,
+    '*': operator.mul,
+}
 
 
 def make_game(name, game):
@@ -60,20 +66,12 @@ def make_results_even_game():
 
 def make_results_calc_game():
     '''Returns question and correct answer for calc game.'''
-    operations = ['addition', 'subtraction', 'multiplication']
     first_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
-    operation = random.choice(operations)
+    operation = random.choice(list(OPERATIONS.keys()))
 
-    if operation == 'addition':
-        correct_answer = str(first_random_number + second_random_number)
-        question = f'{first_random_number} + {second_random_number}'
-    elif operation == 'subtraction':
-        correct_answer = str(first_random_number - second_random_number)
-        question = f'{first_random_number} - {second_random_number}'
-    else:
-        correct_answer = str(first_random_number * second_random_number)
-        question = f'{first_random_number} * {second_random_number}'
+    correct_answer = str(OPERATIONS[operation](first_random_number, second_random_number))
+    question = f'{first_random_number} {operation} {second_random_number}'
 
     return question, correct_answer
 
