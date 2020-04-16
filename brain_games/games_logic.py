@@ -19,7 +19,7 @@ def make_game(name, game):
     while correct_answers_counter < 3:
         question, correct_answer = select_question_answer_by_game(game)
 
-        print(f'Question: {question}')
+        print('Question: {0}'.format(question))
         users_answer = input('Your answer: ').lower()
 
         if users_answer == correct_answer:
@@ -31,10 +31,10 @@ def make_game(name, game):
                     users_answer, correct_answer
                 )
             )
-            print(f'Let\'s try again, {name}')
+            print('Let\'s try again, {0}'.format(name))
             break
     else:
-        print(f'Congratulations, {name}!')
+        print('Congratulations, {0}!'.format(name))
 
 
 def select_question_answer_by_game(game):
@@ -71,7 +71,7 @@ def make_results_calc_game():
     operation = random.choice(list(OPERATIONS.keys()))
 
     correct_answer = str(OPERATIONS[operation](first_random_number, second_random_number))
-    question = f'{first_random_number} {operation} {second_random_number}'
+    question = '{0} {1} {2}'.format(first_random_number, operation, second_random_number)
 
     return question, correct_answer
 
@@ -87,7 +87,7 @@ def make_results_gcd_game():
         maximum, minimum = minimum, maximum % minimum
 
     correct_answer = str(minimum)
-    question = f'{first_random_number} {second_random_number}'
+    question = '{0} {1}'.format(first_random_number, second_random_number)
 
     return question, correct_answer
 
