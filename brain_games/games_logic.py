@@ -2,6 +2,8 @@ import math
 import operator
 import random
 
+import prompt
+
 
 MAX_NUMBER = 100
 MIN_NUMBER = -100
@@ -20,7 +22,7 @@ def make_game(name, game):
         question, correct_answer = select_question_answer_by_game(game)
 
         print('Question: {0}'.format(question))
-        users_answer = input('Your answer: ').lower()
+        users_answer = prompt.string('Your answer: ').lower()
 
         if users_answer == correct_answer:
             print('Correct!')
