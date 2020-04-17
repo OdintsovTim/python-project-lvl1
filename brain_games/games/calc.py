@@ -18,7 +18,9 @@ def round():
     second_random_number = random.randint(MIN_NUMBER, MAX_NUMBER)
     operation = random.choice(list(OPERATIONS.keys()))
 
-    correct_answer = str(OPERATIONS[operation](first_random_number, second_random_number))
-    question = '{0} {1} {2}'.format(first_random_number, operation, second_random_number)
+    correct_answer = str(OPERATIONS[operation](first_random_number,
+                                               second_random_number))
+    question = '{0} {1} {2}'.format(first_random_number, operation,
+                                    second_random_number)
 
     return question, correct_answer
