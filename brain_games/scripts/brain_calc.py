@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
-from brain_games import cli, games_logic
+from brain_games import engine, games
 
 
 def main():
     '''Scripts main func.'''
-    name = cli.welcome_user('calc')
-    games_logic.make_game(name, 'calc')
+    engine.run(games.calc)
 
 
 if __name__ == '__main__':
