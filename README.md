@@ -3,18 +3,15 @@
 
 # How to install
 
-You need to create and activate virtual environment in your directory
+You need to execute these three commands in the terminal sequentiall
 
 ```
 python3 -m venv .venv
 source env/bin/activate
+pip install -i --extra-index-url https://test.pypi.org/simple/ odintsovtim-brain-games https://pypi.org/simple
 ```
 
-After you need to install package in your directory and to run one of the games
-
-```
-pip install -i https://test.pypi.org/simple/ odintsovtim-brain-games --extra-index-url https://pypi.org/simple
-```
+After you can run one of the games
 
 
 ## To win any of the games, you must give three correct answers in a row. If you make a mistake, you will have to start the game again.
