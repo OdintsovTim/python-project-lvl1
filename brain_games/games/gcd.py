@@ -18,7 +18,7 @@ def round():
     first_random_number = random.randint(1, MAX_NUMBER)
     second_random_number = random.randint(1, MAX_NUMBER)
 
-    correct_answer = str(find_gcd(first_random_number, second_random_number))
+    correct_answer = str(gcd(first_random_number, second_random_number))
     question = '{0} {1}'.format(first_random_number, second_random_number)
 
     return question, correct_answer
