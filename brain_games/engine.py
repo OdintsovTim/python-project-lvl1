@@ -1,7 +1,7 @@
 import prompt
 
 
-def greeting_user(description):
+def greet_user(description):
     '''Greeting user and returns his name.'''
     print('Welcome to the Brain Games!')
     print(description + '\n')
@@ -13,7 +13,7 @@ def greeting_user(description):
 
 def run(module):
     '''Making a template for a games.'''
-    name = greeting_user(module.DESCRIPTION)
+    name = greet_user(module.DESCRIPTION)
     correct_answers_counter = 0
 
     while correct_answers_counter < 3:
