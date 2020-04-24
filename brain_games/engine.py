@@ -22,10 +22,7 @@ def run(module):
         print('Question: {0}'.format(question))
         users_answer = prompt.string('Your answer: ').lower()
 
-        if users_answer == correct_answer:
-            print('Correct!')
-            correct_answers_counter += 1
-        else:
+        if not users_answer == correct_answer:
             print(
                 '"{0}" is wrong answer ;(. Correct answer was "{1}".'.format(
                     users_answer, correct_answer
@@ -33,5 +30,7 @@ def run(module):
             )
             print('Let\'s try again, {0}'.format(name))
             break
+        print('Correct!')
+        correct_answers_counter += 1     
     else:
         print('Congratulations, {0}!'.format(name))
