@@ -7,13 +7,10 @@ DESCRIPTION = 'Find the greatest common divisor of given numbers.'
 
 def find_gcd(first_num, second_num):
     '''Returns gcd of two numbers.'''
-    maximum = max(first_num, second_num)
-    minimum = min(first_num, second_num)
+    while first_num % second_num != 0:
+        first_num, second_num = second_num, first_num % second_num
 
-    while maximum % minimum != 0:
-        maximum, minimum = minimum, maximum % minimum
-
-    return minimum
+    return second_num
 
 
 def round():
