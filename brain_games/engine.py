@@ -31,6 +31,6 @@ def run(module):
             print('Let\'s try again, {0}'.format(name))
             break
         print('Correct!')
-        correct_answers_counter += 1     
+        correct_answers_counter += 1
     else:
         print('Congratulations, {0}!'.format(name))
